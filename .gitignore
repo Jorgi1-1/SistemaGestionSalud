@@ -1,0 +1,12 @@
+# Archivo: .gitignore
+
+# Dependencias de Node (archivos pesados)
+/node_modules
+/server/node_modules
+/client/node_modules
+
+# Archivos de configuración y secretos
+/server/.env
+/client/.env.local
+/client/dist
+/npm-debug.log

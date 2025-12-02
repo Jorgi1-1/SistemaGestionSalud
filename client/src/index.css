@@ -1,0 +1,62 @@
+@import 'tailwindcss';
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+
+
+/* --- IDENTIDAD INSTITUCIONAL --- */
+:root {
+  --color-primary: #E37222;   /* Naranja (Botones, Acción) */
+  --color-brand: #154734;     /* Verde Oscuro (Textos, Headers) */
+  --color-accent: #008E87;    /* Turquesa (Iconos, Avatares) */
+  --color-gold: #8E7953;      /* Dorado (Detalles) */
+  --color-bg: #F2F4F7;        /* Gris muy suave (Fondo) */
+}
+
+body {
+  font-family: 'Inter', sans-serif;
+  background-color: var(--color-bg);
+  color: #1D2939; /* Mantenemos gris oscuro para lectura larga */
+  margin: 0;
+  padding: 0;
+  min-height: 100vh;
+}
+
+#root {
+  width: 100%;
+  min-height: 100vh;
+}
+
+/* --- CLASES PERSONALIZADAS (SQEW + BRAND) --- */
+
+/* Inputs: Borde suave, Focus en Turquesa */
+.input-sqew {
+  @apply w-full bg-white border border-gray-200 text-[#154734] text-sm rounded-2xl focus:ring-2 focus:ring-[#008E87] focus:border-transparent block p-3.5 transition-all shadow-sm;
+}
+
+/* Botón Primario: Ahora es NARANJA (Energía) */
+.btn-primary {
+  @apply text-white bg-[#E37222] hover:bg-[#c25e16] focus:ring-4 focus:ring-orange-100 font-semibold rounded-full text-sm px-6 py-3 transition-all active:scale-95 shadow-lg shadow-orange-200;
+}
+
+/* Botón Secundario: Blanco con borde y texto Verde */
+.btn-secondary {
+  @apply text-[#154734] bg-white border border-gray-200 hover:bg-gray-50 hover:border-[#154734] focus:ring-4 focus:ring-gray-100 font-semibold rounded-full text-sm px-6 py-3 transition-all active:scale-95 shadow-sm;
+}
+
+/* Tarjetas: Mantienen limpieza, bordes muy redondeados */
+.card-sqew {
+  @apply bg-white rounded-4xl p-6 shadow-sm border border-gray-100 transition-all;
+}
+
+/* Encabezados: Usan el Verde Institucional */
+h1, h2, h3, h4, h5, h6 {
+  color: var(--color-brand);
+}
+
+.animate-fade-in {
+  animation: fadeIn 0.4s ease-out forwards;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
