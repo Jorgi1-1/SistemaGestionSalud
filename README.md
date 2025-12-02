@@ -39,8 +39,9 @@ El sistema fue desarrollado bajo una arquitectura MERN y cumple con los siguient
 
 ### 2. Inicializar Proyecto y Dependencias
 
+```bash
 # 1. Clonar el repositorio (Asumimos que ya estás en la carpeta raíz)
-# git clone <repo_url>
+git clone <repo_url>
 cd university-health-system
 
 # 2. Instalar dependencias del Backend
@@ -50,39 +51,58 @@ npm install
 # 3. Instalar dependencias del Frontend
 cd ../client
 npm install
-3. Archivo de Variables de Entorno
+```
 
+### 3. Archivo de Variables de Entorno
 Cree el archivo .env en la carpeta server/ con las siguientes variables:
-
-Code snippet
+```bash
 PORT=5000
 MONGO_URI=tu_mongodb_connection_string
 JWT_SECRET=tu_secreto_senior_super_seguro
-
+```
+---
 # Configuración SMTP (Para Notificaciones)
+```bash
 SMTP_HOST=smtp.gmail.com
 SMTP_PORT=587
 SMTP_USER=tu_correo_sender@gmail.com
 SMTP_PASS=tu_password_de_aplicacion
 SMTP_FROM="U Health System <no-reply@uhealth.edu>"
 CLIENT_URL=http://localhost:5173
-▶️ Scripts de Ejecución y Mantenimiento
-Todos los scripts deben ejecutarse desde la carpeta \texttt{/server}.
+```
+---
 
-Comando	Descripción
-\texttt{npm run dev}	Inicia el servidor de Express y el Worker Cron en modo desarrollo (nodemon).
-\texttt{npm run seed}	Popula la base de datos con usuarios (Admin, Doctor, Estudiante) y datos iniciales de prueba.
-\texttt{npm run clean}	Limpia la base de datos. Elimina todas las citas, logs y notas clínicas, manteniendo los usuarios y expedientes básicos. (Ideal antes de la demo).
-\texttt{npm run send-emails}	Ejecuta el Worker de notificaciones manualmente para procesar la cola de envíos pendientes (\textbf{Uso para testing instantáneo}).
-Credenciales de Prueba (Post-Seed)
+### ▶️ Scripts de Ejecución y Mantenimiento
+Todos los scripts deben ejecutarse desde la carpeta server.
 
-Admin: admin@u.edu / adminpassword
+| Comando	| Descripción | 
+| :--- | :--- |
+| ```npm run dev``` |	Inicia el servidor de Express y el Worker Cron en modo desarrollo (nodemon).|
+| ```npm run seed``` |	Popula la base de datos con usuarios (Admin, Doctor, Estudiante) y datos iniciales de prueba.|
+| ```npm run clean``` |	Limpia la base de datos. Elimina todas las citas, logs y notas clínicas, manteniendo los usuarios y expedientes básicos. (Ideal antes de la demo).|
+| ```npm run send-emails```	| Ejecuta el Worker de notificaciones manualmente para procesar la cola de envíos pendientes (\textbf{Uso para testing instantáneo}).|
 
-Médico: dr.house@u.edu / password123
+---
 
-Estudiante: peter.parker@u.edu / password123
+# Credenciales de Prueba (Post-Seed)
+
+* Admin: admin@u.edu / adminpassword
+
+* Médico: dr.house@u.edu / password123
+
+* Estudiante: peter.parker@u.edu / password123
+
+---
 
 🚀 Puesta en Marcha
-\textbf{Backend}: Abrir Terminal 1 y ejecutar \texttt{npm run dev} (en \texttt{/server}).
+Abrir Terminal 1 y ejecutar 
+```bash
+npm run dev 
+```
+en server.
 
-\textbf{Frontend}: Abrir Terminal 2 y ejecutar \texttt{npm run dev} (en \texttt{/client}). EOF
+Abrir Terminal 2 y ejecutar 
+```bash
+npm run dev
+```
+en client.
